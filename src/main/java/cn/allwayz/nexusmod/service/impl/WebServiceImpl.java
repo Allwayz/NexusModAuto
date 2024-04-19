@@ -32,7 +32,11 @@ public class WebServiceImpl implements WebService {
 
     @Override
     public Map<String, String> getDownloadLinkMap(List<String> ids) {
-        return download((String[]) ids.toArray());
+        String[] stringArray = new String[ids.size()];
+        for (int i = 0; i < ids.size(); i++) {
+            stringArray[i] = ids.get(i);
+        }
+        return download(stringArray);
     }
 
     private Map<String, String> download(String[] modIds) {

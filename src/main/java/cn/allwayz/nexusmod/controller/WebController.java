@@ -25,7 +25,7 @@ public class WebController {
 
     @PostMapping("download")
     public String downloadModByIds(@RequestBody List<String> ids){
-        webService.downloadModByIds(ids);
+        webService.getDownloadLinkMap(ids);
         return ids.toString();
     }
 }
